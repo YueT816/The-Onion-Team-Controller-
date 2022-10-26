@@ -88,7 +88,7 @@ function createArrow(direction, parentDivId, size = 10, imgFileName = "") {
  * @param {Number} max An optional parameter to specify the maximum value for the slider
  * @returns The slider element created
  */
-function createSlider(sliderDivId, parentDivId, min = 0, max = 100) {
+function createSlider(sliderDivId, parentDivId, min = 0, max = 100, direction) {
     //Create slider element
     const slider = document.createElement("input");
     slider.type = "range";
@@ -106,7 +106,7 @@ function createSlider(sliderDivId, parentDivId, min = 0, max = 100) {
     //Append p element with embedded span element to parent div to print out value of slider
     let valueText = document.createElement("p");
     valueText.id = sliderDivId + "-value";
-    valueText.innerHTML = "Value: ";
+    valueText.innerHTML = direction + ": ";
     //Create span element
     let valueTextSpan = document.createElement("span");
     valueTextSpan.id = sliderDivId + "-value-span";
@@ -171,4 +171,21 @@ function renderJoystick() {
     document.body.appendChild(joystick.base);
 }
 
-export {appendElToParentDiv, createArrow, createSlider, createCheckbox, renderJoystick};
+
+
+
+function renderButton(ButtonDivID, defaultx, x2){
+    let x = defaultx;
+    const myBtn = document.getElementById(ButtonDivID);
+    myBtn.addEventListener("mousedown", function press(){
+         x = x2;
+         document.getElementById(ButtonDivID).innerText = x;
+    });
+
+    myBtn.addEventListener("mouseup", function unpress(){
+        x = defaultx;
+        document.getElementById(ButtonDivID).innerText = x;
+    });
+  }
+      
+   export {appendElToParentDiv, createArrow, createSlider, createCheckbox, renderJoystick, renderButton};

@@ -1,8 +1,9 @@
 /*Common styling for slider*/
+
 input[type=range] {
-  -webkit-appearance: none;  /* Override default CSS styles */
+  -webkit-appearance: slider-vertical;  /* Override default CSS styles */
   width: 50%; /* Full-width */
-  height: 25px; /* Specified height */
+  height: 100px; /* Specified height */
   background: none; /* Grey background */
   outline: none; /* Remove outline */
   opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
@@ -13,3 +14,48 @@ input[type=range] {
 input[type=range]:hover {
   opacity: 1; /* Fully shown on mouse-over */
 }
+
+h1 {
+  text-align: center;
+}
+
+#MyBtn1{
+  margin: auto;
+  position: fixed;
+  top: 200px;
+  left: 0px;
+  right: 0px;
+  border: 3px solid #73AD21;
+  width: 50px;
+  height: 50px;
+}
+
+#MyBtn2{
+  margin: auto;
+  position: fixed;
+  top: 300px;
+  left: 0px;
+  right: 0px;
+  border: 3px solid #73AD21;
+  width: 50px;
+  height: 50px;
+}
+
+#turn-left-slider{
+    position: absolute; 
+    top: 140px;
+    left: 50px;
+    width: 50px;
+    height: 200px;
+    border: 3px solid #73AD21;
+}
+
+#turn-right-slider{
+    position: absolute;
+    top: 140px;
+    right: 50px;
+    width: 50px;
+    height: 200px;
+    border: 3px solid #73AD21;
+}
+
